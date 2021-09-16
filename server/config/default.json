@@ -1,0 +1,8 @@
+{
+	"jwtPrivateKey": "",
+	"username": "root",
+	"password": null,
+	"database": "sequelize",
+	"host": "localhost",
+	"dialect": "mysql"
+}

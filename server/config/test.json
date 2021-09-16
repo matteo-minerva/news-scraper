@@ -1,0 +1,8 @@
+{
+	"jwtPrivateKey": "1234",
+	"username": "root",
+	"password": null,
+	"database": "test",
+	"host": "localhost",
+	"dialect": "mysql"
+}
