@@ -14,7 +14,7 @@ router.get("/", newsController.read);
  * @access private
  * @endpoint /api/news/
  **/
-router.post("/", newsController.create);
+// router.post("/", newsController.create);
 
 /**
  * @method GET
