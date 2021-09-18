@@ -1,6 +1,6 @@
 {
 	"name": "italian-papers-news-scraper",
-	"version": "2.0.1",
+	"version": "2.1.1",
 	"description": "A news scraper for some of the best italian papers. It does display the latest news from multiple sources so that the user can have different POVs in one page.",
 	"main": "server.js",
 	"scripts": {
