@@ -135,4 +135,92 @@ describe("/api/papers", () => {
 			expect(res.body).toHaveProperty("url_to_scrape", new Array(12).join("a"));
 		});
 	});
+
+	describe("PUT /:id", () => {
+		let token, newName, newHomepage, newUrlToScrape, createdPaper, _id;
+
+		const exec = async () => {
+			return await request(server)
+				.put("/api/papers/" + id)
+				.set("x-auth-token", token)
+				.send({
+					name: newName,
+					homepage: newHomepage,
+					url_to_scrape: newUrlToScrape,
+				});
+		};
+
+		beforeEach(async () => {
+			[newName, newHomepage, newUrlToScrape] = Array(3).fill(
+				Array(20).join("a")
+			);
+			createdPaper = await Paper.create({
+				name: newName,
+				homepage: newHomepage,
+				url_to_scrape: newUrlToScrape,
+			});
+
+			user = { _id: "a", is_admin: true };
+			token = User.generateAuthToken(user);
+			id = createdPaper._id;
+		});
+
+		it("should return 404 if id is invalid", async () => {
+			id = 1;
+
+			const res = await exec();
+
+			expect(res.status).toBe(404);
+		});
+
+		it("should return 404 if paper with the given id was not found", async () => {
+			id = "bdsfhj";
+
+			const res = await exec();
+
+			expect(res.status).toBe(404);
+		});
+
+		it("should return a 400 if paper name is less than 5", async () => {
+			newName = "1234";
+			const res = await exec();
+
+			expect(res.status).toBe(400);
+		});
+
+		it("should return a 400 if paper name is more than 255", async () => {
+			newName = new Array(300).join("a");
+			const res = await exec();
+
+			expect(res.status).toBe(400);
+		});
+
+		it("should return a 400 if paper homepage is less than 10", async () => {
+			newHomepage = "123";
+			const res = await exec();
+
+			expect(res.status).toBe(400);
+		});
+
+		it("should return a 400 if paper homepage is more than 255", async () => {
+			newHomepage = new Array(300).join("a");
+			const res = await exec();
+
+			expect(res.status).toBe(400);
+		});
+
+		it("should return a 400 if paper url_to_scrape is less than 10", async () => {
+			newUrlToScrape = "123";
+			const res = await exec();
+
+			expect(res.status).toBe(400);
+		});
+
+		it("should return a 400 if paper url_to_scrape is more than 255", async () => {
+			newUrlToScrape = new Array(300).join("a");
+			const res = await exec();
+
+			expect(res.status).toBe(400);
+		});
+	});
 });

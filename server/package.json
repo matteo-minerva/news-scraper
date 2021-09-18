@@ -1,14 +1,24 @@
 {
-	"name": "orm",
-	"version": "1.0.0",
-	"description": "",
+	"name": "italian-papers-news-scraper",
+	"version": "2.0.1",
+	"description": "A news scraper for some of the best italian papers. It does display the latest news from multiple sources so that the user can have different POVs in one page.",
 	"main": "server.js",
 	"scripts": {
 		"start": "set news_scraper_jwtPrivateKey=somekey && nodemon server.js",
-		"test": "jest --watchAll -w=1 --verbose --coverage"
+		"test": "jest --watchAll -w=1 --verbose"
 	},
-	"keywords": [],
-	"author": "",
+	"keywords": [
+		"nodejs",
+		"express",
+		"puppeteer",
+		"fullstack"
+	],
+	"homepage": "https://github.com/matteo-minerva/news-scraper",
+	"author": {
+		"name": "Matteo Minerva",
+		"email": "m.minerva@outlook.it",
+		"url": "https://www.linkedin.com/in/m-minerva/"
+	},
 	"license": "ISC",
 	"dependencies": {
 		"bcrypt": "^5.0.1",

@@ -1,4 +1,12 @@
-const app = require("./startup");
+const express = require("express");
+const winston = require("winston");
+const { sequelize } = require("./models");
+const config = require("config");
+const app = express();
+
+require("./startup/logging")();
+require("./startup/routes")(app);
+require("./startup/config")();
 
 const PORT = process.env.PORT || 3001;
 const server = app.listen(PORT, async () => {
@@ -12,5 +20,4 @@ const server = app.listen(PORT, async () => {
 		timestamp: Date.now(),
 	});
 });
-
 module.exports = server;
