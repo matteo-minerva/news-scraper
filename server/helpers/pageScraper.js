@@ -1,7 +1,6 @@
 const imgLoading = require("../helpers/lazyloading");
 const moment = require("moment");
 moment.locale("it");
-// @ts-ignore
 const { News, Paper } = require("../models/");
 
 module.exports = async (browser, url) => {
