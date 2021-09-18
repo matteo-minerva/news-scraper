@@ -5,7 +5,7 @@
 	"main": "server.js",
 	"scripts": {
 		"start": "set news_scraper_jwtPrivateKey=somekey && nodemon server.js",
-		"test": "jest --watchAll -w=1 --verbose"
+		"test": "jest --watchAll --verbose"
 	},
 	"keywords": [
 		"nodejs",
