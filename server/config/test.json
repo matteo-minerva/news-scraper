@@ -4,5 +4,6 @@
 	"password": null,
 	"database": "test",
 	"host": "localhost",
-	"dialect": "mysql"
+	"dialect": "mysql",
+	"requiresAuth": false
 }
