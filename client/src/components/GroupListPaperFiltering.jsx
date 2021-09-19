@@ -35,7 +35,12 @@ GroupListPaperFiltering.propTypes = {
 			url_to_scrape: PropTypes.string.isRequired,
 		})
 	),
-	selectedPaper: PropTypes.func.isRequired,
+	selectedPaper: PropTypes.shape({
+		_id: PropTypes.string.isRequired,
+		name: PropTypes.string.isRequired,
+		homepage: PropTypes.string.isRequired,
+		url_to_scrape: PropTypes.string.isRequired,
+	}),
 	onPaperSelect: PropTypes.func.isRequired,
 };
 

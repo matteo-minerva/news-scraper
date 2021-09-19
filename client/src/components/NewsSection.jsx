@@ -6,7 +6,7 @@ import Col from "react-bootstrap/Col";
 
 function NewsSection({ news, children }) {
 	return (
-		<Col sm={12} lg={9}>
+		<Col xs={12} lg={9}>
 			{children}
 			<Row>
 				{news.map((item) => {
@@ -19,16 +19,20 @@ function NewsSection({ news, children }) {
 
 NewsSection.propTypes = {
 	children: PropTypes.element,
-	_id: PropTypes.string.isRequired,
-	url: PropTypes.string.isRequired,
-	heading: PropTypes.string.isRequired,
-	img_src: PropTypes.string.isRequired,
-	date: PropTypes.string.isRequired,
-	paper: PropTypes.shape({
-		_id: PropTypes.string.isRequired,
-		name: PropTypes.string.isRequired,
-		homepage: PropTypes.string.isRequired,
-	}),
+	news: PropTypes.arrayOf(
+		PropTypes.shape({
+			_id: PropTypes.string.isRequired,
+			url: PropTypes.string.isRequired,
+			heading: PropTypes.string.isRequired,
+			img_src: PropTypes.string.isRequired,
+			date: PropTypes.string.isRequired,
+			paper: PropTypes.shape({
+				_id: PropTypes.string.isRequired,
+				name: PropTypes.string.isRequired,
+				homepage: PropTypes.string.isRequired,
+			}),
+		})
+	),
 };
 
 export default NewsSection;

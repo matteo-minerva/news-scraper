@@ -33,13 +33,11 @@ function NewsCard({ heading, paper, img_src, date, url }) {
 
 NewsCard.propTypes = {
 	heading: PropTypes.string.isRequired,
-	paper: PropTypes.arrayOf(
-		PropTypes.shape({
-			_id: PropTypes.string.isRequired,
-			name: PropTypes.string.isRequired,
-			homepage: PropTypes.string.isRequired,
-		})
-	),
+	paper: PropTypes.shape({
+		_id: PropTypes.string.isRequired,
+		name: PropTypes.string.isRequired,
+		homepage: PropTypes.string.isRequired,
+	}),
 	img_src: PropTypes.string.isRequired,
 	date: PropTypes.string.isRequired,
 	url: PropTypes.string.isRequired,
