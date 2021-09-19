@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import Card from "react-bootstrap/Card";
 import Col from "react-bootstrap/Col";
@@ -6,8 +7,8 @@ import Col from "react-bootstrap/Col";
 function NewsCard({ heading, paper, img_src, date, url }) {
 	return (
 		<Col xs={12} md={6} lg={4} className="my-3">
-			<a
-				href={url}
+			<Link
+				to={url}
 				target="_blank"
 				className="text-decoration-none text-body"
 				rel="noreferrer"
@@ -26,7 +27,7 @@ function NewsCard({ heading, paper, img_src, date, url }) {
 						Fonte: {paper.name}
 					</Card.Footer>
 				</Card>
-			</a>
+			</Link>
 		</Col>
 	);
 }
