@@ -1,10 +1,10 @@
 import { http } from "./httpService";
-const API_URL = "http://localhost:3001/api/papers/";
+import { apiURL } from "../config.json";
 
 export function getPapers() {
-	return http.get(API_URL);
+	return http.get(apiURL + "/papers");
 }
 
 export function getPaper(id) {
-	return http.get(API_URL + id);
+	return http.get(apiURL + `/papers/${id}`);
 }
