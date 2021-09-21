@@ -96,10 +96,7 @@ export class News extends Component {
 					/>
 				</Row>
 				{news.length === 0 ? (
-					<p>
-						Si è verificato un problema: sembra che non sia presente alcuna
-						notizia! Riprova più tardi.
-					</p>
+					<p>Al momento non è presente alcuna notizia, riprova più tardi.</p>
 				) : (
 					<NewsPagination
 						itemsCount={totalCount}
