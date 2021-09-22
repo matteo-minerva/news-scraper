@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
 			const schema = Joi.object({
 				email: Joi.string().min(5).max(255).email().required(),
 				password: Joi.string().min(8).max(255).strip().required(),
-				age: Joi.number().min(0).max(150),
+				age: Joi.number().min(14).max(150),
 				gender: Joi.string().valid("M", "F"),
 			});
 			return schema.validate(user);
