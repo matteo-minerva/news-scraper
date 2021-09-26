@@ -7,9 +7,9 @@ import Col from "react-bootstrap/Col";
 const CardSkeletonLoading = () => {
 	return (
 		<Row>
-			{[...Array(6)].map((card) => {
+			{[...Array(6)].map((card, index) => {
 				return (
-					<Col xs={12} md={6} lg={4} className="my-3">
+					<Col xs={12} md={6} lg={4} className="my-3" key={index}>
 						<Card>
 							<Placeholder
 								bg="secondary"

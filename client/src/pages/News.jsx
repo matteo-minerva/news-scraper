@@ -34,7 +34,9 @@ export class News extends Component {
 			...data,
 		];
 
-		this.setState({ papers, news, selectedPaper: papers[0], isLoading: false });
+		this.setState({ papers, news, selectedPaper: papers[0] });
+		if (this.state.news.length !== 0) this.setState({ isLoading: false });
+		else this.setState({ isLoading: true });
 	}
 
 	handlePaperSelect = (paper) => {
@@ -98,9 +100,6 @@ export class News extends Component {
 						onPaperSelect={this.handlePaperSelect}
 					/>
 				</Row>
-				{/* {news.length === 0 ? (
-					<p>Non sono presenti notizie, riprovare più tardi</p>
-				) : ( */}
 				<NewsPagination
 					itemsCount={totalCount}
 					pageSize={pageSize}
