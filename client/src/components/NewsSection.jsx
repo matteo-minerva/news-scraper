@@ -3,14 +3,14 @@ import PropTypes from "prop-types";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import NewsCard from "./NewsCard";
-import Loading from "../common/Loading";
+import CardSkeletonLoading from "./CardSkeletonLoading";
 
 function NewsSection({ news, children, isLoading }) {
 	return (
 		<Col xs={12} lg={9}>
 			{children}
 			{isLoading ? (
-				<Loading text={"Caricamento in corso..."} />
+				<CardSkeletonLoading />
 			) : (
 				<Row>
 					{news.map((item) => {
