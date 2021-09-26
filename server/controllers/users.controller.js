@@ -21,10 +21,13 @@ const UserController = {
 		let user = _.pick(req.body, ["_id", "email", "password", "age", "gender"]);
 		const salt = await bcrypt.genSalt(10);
 		user.password = await bcrypt.hash(user.password, salt);
-		await User.create(user);
+		const createdUser = await User.create(user);
 
-		const token = User.generateAuthToken(user);
-		res.send(token);
+		const token = User.generateAuthToken(createdUser);
+		res
+			.header("x-auth-token", token)
+			.header("access-control-expose-headers", "x-auth-token")
+			.send(_.pick(createdUser, ["_id", "email", "signup", "age", "gender"]));
 	},
 
 	getCurrentUser: async (req, res) => {

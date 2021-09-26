@@ -12,10 +12,8 @@ const Input = ({ name, label, error, ...rest }) => {
 				label={label}
 				className="mb-3"
 			>
-				<Form.Control {...rest} name={name} id={name} placeholder={label} />
+				<Form.Control {...rest} name={name} placeholder={label} />
 			</FloatingLabel>
-			{/* <Form.Label htmlFor={name}>{label}</Form.Label> */}
-			{/* <Form.Control {...rest} name={name} id={name} /> */}
 			{error && (
 				<Alert className="mt-2" variant="danger">
 					{error}

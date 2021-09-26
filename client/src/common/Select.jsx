@@ -8,10 +8,12 @@ const Select = ({ name, label, options, error, ...rest }) => {
 		<Form.Group className="mb-3" htmlFor={name} controlId={name}>
 			<FloatingLabel controlId="floatingSelect" label={label}>
 				<Form.Select name={name} id={name} {...rest}>
-					<option value="" selected hidden>
+					<option value="" hidden>
 						Seleziona un'opzione
 					</option>
-					<option value={null}>N/A</option>
+					<option value={null} defaultValue>
+						N/A
+					</option>
 					{options.map((option) => (
 						<option key={option._id} value={option._id}>
 							{option.name}

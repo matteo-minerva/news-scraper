@@ -13,15 +13,16 @@ module.exports = (sequelize, DataTypes) => {
 			const schema = Joi.object({
 				email: Joi.string().min(5).max(255).email().required(),
 				password: Joi.string().min(8).max(255).strip().required(),
-				age: Joi.number().min(14).max(150),
-				gender: Joi.string().valid("M", "F"),
+				age: Joi.number().min(14).max(150).allow(null),
+				gender: Joi.string().valid("M", "F").allow(null),
 			});
 			return schema.validate(user);
 		}
 
 		static generateAuthToken(modelInstance) {
+			const { _id, signup, email, age, gender } = modelInstance;
 			return jwt.sign(
-				{ _id: modelInstance._id, is_admin: modelInstance.is_admin },
+				{ _id, signup, email, age, gender },
 				config.get("jwtPrivateKey")
 			);
 		}

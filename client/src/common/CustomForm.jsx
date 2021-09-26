@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 import Joi from "joi-browser";
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
 import Input from "./Input";
 import Select from "./Select";
 
-class Form extends Component {
+class CustomForm extends Component {
 	state = {
 		data: {},
 		errors: {},
@@ -50,9 +52,22 @@ class Form extends Component {
 
 	renderButton(label) {
 		return (
-			<button disabled={this.validate()} className="btn btn-primary">
+			<Button
+				type="submit"
+				disabled={this.validate()}
+				variant="primary"
+				className="mt-3"
+			>
 				{label}
-			</button>
+			</Button>
+		);
+	}
+
+	renderHelpText(content) {
+		return (
+			<div>
+				<Form.Text muted>{content}</Form.Text>
+			</div>
 		);
 	}
 
@@ -87,4 +102,4 @@ class Form extends Component {
 	}
 }
 
-export default Form;
+export default CustomForm;
