@@ -34,8 +34,6 @@ class LoginForm extends CustomForm {
 	};
 
 	render() {
-		// if (auth.getCurrentUser()) return <Redirect to="/" />;
-
 		return (
 			<Container>
 				<Row

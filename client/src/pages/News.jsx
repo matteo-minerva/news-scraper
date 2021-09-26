@@ -17,9 +17,11 @@ export class News extends Component {
 		currentPage: 1,
 		pageSize: 12,
 		searchQuery: "",
+		isLoading: true,
 	};
 
 	async componentDidMount() {
+		this.setState({ isLoading: true });
 		const { data } = await getPapers();
 		const { data: news } = await getNews();
 		const papers = [
@@ -32,7 +34,7 @@ export class News extends Component {
 			...data,
 		];
 
-		this.setState({ papers, news, selectedPaper: papers[0] });
+		this.setState({ papers, news, selectedPaper: papers[0], isLoading: false });
 	}
 
 	handlePaperSelect = (paper) => {
@@ -77,7 +79,7 @@ export class News extends Component {
 
 	render() {
 		const { news, totalCount } = this.getPagedData();
-		const { pageSize, currentPage, searchQuery } = this.state;
+		const { pageSize, currentPage, searchQuery, isLoading } = this.state;
 
 		return (
 			<Container>
@@ -86,25 +88,25 @@ export class News extends Component {
 					<span className="fs-4 fw-light">Aggiornate ogni quarto d'ora</span>
 				</Row>
 				<Row className="mt-3">
-					<NewsSection news={news}>
+					<NewsSection news={news} isLoading={isLoading}>
 						<SearchBar value={searchQuery} onChange={this.handleSearch} />
 					</NewsSection>
+
 					<GroupListPaperFiltering
 						papers={this.state.papers}
 						selectedPaper={this.state.selectedPaper}
 						onPaperSelect={this.handlePaperSelect}
 					/>
 				</Row>
-				{news.length === 0 ? (
-					<p>Al momento non è presente alcuna notizia, riprova più tardi.</p>
-				) : (
-					<NewsPagination
-						itemsCount={totalCount}
-						pageSize={pageSize}
-						currentPage={currentPage}
-						onPageChange={this.handlePageChange}
-					/>
-				)}
+				{/* {news.length === 0 ? (
+					<p>Non sono presenti notizie, riprovare più tardi</p>
+				) : ( */}
+				<NewsPagination
+					itemsCount={totalCount}
+					pageSize={pageSize}
+					currentPage={currentPage}
+					onPageChange={this.handlePageChange}
+				/>
 			</Container>
 		);
 	}

@@ -5,5 +5,5 @@
 	"database": "sequelize",
 	"host": "localhost",
 	"dialect": "mysql",
-	"requiresAuth": false
+	"requiresAuth": true
 }

@@ -3,12 +3,17 @@ const { Paper } = require("../models");
 const getBrowser = require("../helpers/browser");
 const pageScraper = require("../helpers/pageScraper");
 
-module.exports = cron.schedule("*/15 * * * *", async () => {
+module.exports = async () => {
+	await getNews();
+	cron.schedule("*/15 * * * *", await getNews);
+};
+
+async function getNews() {
 	const PAPERS = await Paper.findAll({
 		attributes: ["url_to_scrape"],
 	});
 	return await scrapePapers(PAPERS);
-});
+}
 
 async function scrapePapers(PAPERS) {
 	let news = [];

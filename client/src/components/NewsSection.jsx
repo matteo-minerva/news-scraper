@@ -1,24 +1,30 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Row } from "react-bootstrap";
-import NewsCard from "./NewsCard";
+import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import NewsCard from "./NewsCard";
+import Loading from "../common/Loading";
 
-function NewsSection({ news, children }) {
+function NewsSection({ news, children, isLoading }) {
 	return (
 		<Col xs={12} lg={9}>
 			{children}
-			<Row>
-				{news.map((item) => {
-					return <NewsCard {...item} key={item._id} />;
-				})}
-			</Row>
+			{isLoading ? (
+				<Loading text={"Caricamento in corso..."} />
+			) : (
+				<Row>
+					{news.map((item) => {
+						return <NewsCard {...item} key={item._id} />;
+					})}
+				</Row>
+			)}
 		</Col>
 	);
 }
 
 NewsSection.propTypes = {
 	children: PropTypes.element,
+	isLoading: PropTypes.bool,
 	news: PropTypes.arrayOf(
 		PropTypes.shape({
 			_id: PropTypes.string.isRequired,

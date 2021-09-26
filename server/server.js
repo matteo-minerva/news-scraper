@@ -7,7 +7,7 @@ const app = express();
 require("./startup/logging")();
 require("./startup/routes")(app);
 require("./startup/config")();
-require("./startup/scheduledJob");
+require("./startup/scheduledJob")();
 
 const PORT = process.env.PORT || 3001;
 const server = app.listen(PORT, async () => {
