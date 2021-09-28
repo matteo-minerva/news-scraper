@@ -137,18 +137,17 @@ Allows to find information about one's own user
 Allows to find the newspapers present in the DB
 
 /api/papers POST - private access
-Adds a new header to the table
+Adds a new newspaper to the table
 
 /api/papers/:id PUT - private access
 Allows you to modify the information regarding a particular
-header
+newspaper
 
 /api/papers/:id GET - public access
-Retrieves information about a particular header /api/papers/:id
-header
+Retrieves information about a particular newspaper /api/papers/:id
 
 /api/papers/:id DELETE - private access
-Allows to delete a particular header from the DB
+Allows to delete a particular newspaper from the DB
 ```
 
 <!-- CONTACT -->
