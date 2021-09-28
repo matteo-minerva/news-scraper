@@ -47,12 +47,7 @@ class RegisterForm extends CustomForm {
 					className="align-items-center"
 					style={{ minHeight: "calc(100vh - 64px)" }}
 				>
-					<Col
-						style={{
-							margin: "1rem",
-							padding: "2rem 1rem",
-						}}
-					>
+					<Col style={{}} className="auth-form">
 						<h1 className="text-center">Registrati</h1>
 						<Form onSubmit={this.handleSubmit}>
 							{this.renderInput("email", "Email *", "email")}

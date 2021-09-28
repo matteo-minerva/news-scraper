@@ -31,3 +31,36 @@ code {
 .not-found h1 {
 	font-size: 2.5rem;
 }
+
+input,
+select {
+	border: 1px solid #212121 !important;
+	border-radius: 0 !important;
+	box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+select option {
+	font-size: 1.2rem;
+}
+
+button[type="submit"] {
+	text-transform: uppercase;
+	padding: 0.5rem 1.7rem;
+	font-size: 24px;
+	border-radius: 0;
+	box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.form-control:focus,
+.form-select:focus {
+	box-shadow: none;
+}
+
+@media screen and (min-width: 75rem) {
+	.auth-form {
+		max-width: 31.25rem;
+		margin-left: auto;
+		margin-right: auto;
+		padding: 2rem 1rem;
+	}
+}

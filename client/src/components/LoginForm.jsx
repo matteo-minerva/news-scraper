@@ -3,7 +3,6 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
-// import { Redirect } from "react-router-dom";
 import Joi from "joi-browser";
 import CustomForm from "../common/CustomForm";
 import auth from "../services/authService";
@@ -37,15 +36,10 @@ class LoginForm extends CustomForm {
 		return (
 			<Container>
 				<Row
-					className="align-items-center"
+					className="align-items-center justify-content-center"
 					style={{ minHeight: "calc(100vh - 64px)" }}
 				>
-					<Col
-						style={{
-							margin: "1rem",
-							padding: "2rem 1rem",
-						}}
-					>
+					<Col className="auth-form">
 						<h1 className="text-center">Login</h1>
 
 						<Form onSubmit={this.handleSubmit}>
