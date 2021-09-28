@@ -96,10 +96,6 @@ npm run dev
 6. The server should be up and running.
    <strong>Side note:</strong> I am setting and env variable in the "dev" script, it won't work on Mac and you should NOT do this in a production environment
 
-```npm
-
-```
-
 7. In another terminal, head to the client folder
 
 ```
