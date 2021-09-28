@@ -1,9 +1,27 @@
+$indigo: #924fff;
+
 input,
-select {
+select,
+.list-group {
 	border: 1px solid #212121 !important;
 	border-radius: 0 !important;
 	box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
 	min-height: 3.125rem;
+}
+
+.list-group .active,
+.page-item.active .page-link {
+	background-color: $indigo !important;
+	border-color: $indigo !important;
+}
+
+.page-link {
+	color: rgb(36, 36, 36);
+}
+
+.btn-primary {
+	background-color: $indigo !important;
+	border-color: $indigo !important;
 }
 
 .form-control:focus,
