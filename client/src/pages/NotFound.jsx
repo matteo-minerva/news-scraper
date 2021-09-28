@@ -1,15 +1,24 @@
 import React from "react";
 import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
 const NotFound = () => {
 	return (
 		<Container className="not-found">
-			<Row>
-				<Col>
-					<h1>Not found</h1>
-				</Col>
-			</Row>
+			<p className="title"> pagina inesistente </p>
+
+			<div className="tipsiz">
+				<div className="tipsiz-body">
+					<div className="arm-left arm"></div>
+					<div className="face">
+						<div className="face-upper">
+							<div className="element">4</div>
+							<div className="element">0</div>
+							<div className="element">4</div>
+						</div>
+						<div className="mouth"></div>
+					</div>
+					<div className="arm-right arm"></div>
+				</div>
+			</div>
 		</Container>
 	);
 };
