@@ -8,6 +8,7 @@ require("./startup/logging")();
 require("./startup/routes")(app);
 require("./startup/config")();
 require("./startup/scheduledJob")();
+require("./startup/prod")(app);
 
 const PORT = process.env.PORT || 3001;
 const server = app.listen(PORT, async () => {
