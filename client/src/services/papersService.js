@@ -1,10 +1,11 @@
 import { http } from "./httpService";
-import { apiURL } from "../config.json";
+
+const apiEndpoint = "/papers";
 
 export function getPapers() {
-	return http.get(apiURL + "/papers");
+	return http.get(apiEndpoint);
 }
 
 export function getPaper(id) {
-	return http.get(apiURL + `/papers/${id}`);
+	return http.get(apiEndpoint + `/papers/${id}`);
 }
