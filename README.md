@@ -90,7 +90,8 @@ npx sequelize-cli db:drop
 npx sequelize-cli db:create
 npx sequelize-cli db:migrate
 npx sequelize-cli db:seed:all
-npm run dev
+npm run windows-dev #if you are on Windows
+npm run linux-dev #if you are on OSX or Linux
 ```
 
 6. The server should be up and running.
