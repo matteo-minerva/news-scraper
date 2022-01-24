@@ -4,7 +4,8 @@
 	"description": "A news scraper for some of the best italian papers. It does display the latest news from multiple sources so that the user can have different POVs in one page.",
 	"main": "server.js",
 	"scripts": {
-		"dev": "set news_scraper_jwtPrivateKey=somekey && nodemon server.js"
+		"windows-dev": "set news_scraper_jwtPrivateKey=somekey && nodemon server.js",
+		"linux-dev": "export news_scraper_jwtPrivateKey=somekey && nodemon server.js"
 	},
 	"engines": {
 		"node": "16.10.0"
