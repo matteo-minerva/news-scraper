@@ -34,7 +34,7 @@
 
 ## About The Project
 
-[![Website Screenshot][product-screenshot]](https://news-scraper.vercel.app/)
+[![Website Screenshot][product-screenshot]]
 
 Requirements:
 
